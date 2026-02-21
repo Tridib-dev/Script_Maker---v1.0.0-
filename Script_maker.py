@@ -18,28 +18,26 @@ def main():
     print("\n\n\t\t\t\t\t\t<=: WELCOME TO MESSAGE LOG :=>\n\t\t\t\t\t_____________________________________________\n\n")
     
     # Users
-    names = {
-        "1" : input("Enter first users name : "),
-        "2" : input("Enter second users name : ")
-    }
+    users = {}
+    no_users = int(input("Enter number of users : "))
+    if no_users <= 0:
+        print("\n\nNo users\nProgramme ended !\n")
+        return
+    for i in range(1,no_users+1):
+        users[str(i)] = input(f"Enter name of id~{i} user: ")
 
     # messaging function 
 
-    print(f"\n\n\t\t\t\t\t<=: Welcome {names['1']} and {names['2']} to the messaging world :=>\n\t\t\t\t   ________________________________________________________\n")
+    print(f"\n\n\t\t\t\t\t<=: Welcome  to the messaging world :=>\n\t\t\t\t   ________________________________________________________\n")
     print("You can start messaging now !...\n\n")
     
     running = True
-    
-    while(running):
-        u_name = input(f"Enter your name 1 for {names['1']} and 2 for {names['2']} : ")
-        if u_name == '1':
-            u_name = names['1']
-        elif u_name == '2':
-            u_name = names['2']
-        else:
-            print("Invalid input !... Try again !...")
-            continue
+    for i in users:
+        print(f"[id : {i}] => [name : {users[i]}]\n","_"*30,"\n")
         
+    while(running):
+        user_id = input("Enter messager id : ")
+        u_name = users[user_id]
         # Get user message and time
         u_msg = input("Enter your message : ")
         if not u_msg.strip():
@@ -57,7 +55,7 @@ def main():
         # Asking for ending or continuing the conversation
         
         print("Message sent successfully !...\n")
-        print("-"*50)
+        print("_"*50)       # for decoration
         E = input("press E to end this conersation or C to continue the conversation : ")
         if(E.lower() == 'e'):
             running = False
@@ -68,7 +66,7 @@ def main():
         else:
             print("Invalid input !... Try again !...")
             break
-        
+        print("_"*50)      # for decoration
     
     
     

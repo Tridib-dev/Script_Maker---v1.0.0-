@@ -3,7 +3,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_NAME = os.path.join(BASE_DIR,"messages.txt")
-HEADER = f"\n\n{'<=: All of the messages :=>'.center(80)}\n{'='*80}\n\n"
+HEADER = f"\n\n{'<=: All of the messages :=>'.center(80)}\n{("\t"*6)+('='*48)}\n\n"    # for decoration
 
 def reset_file():
     
@@ -39,5 +39,5 @@ class Message:
         self.owner = owner
     
     def msg_show(self):
-        return f"{self.owner} : {self.msg} \n{self.time} \n" + "-"*50 + "\n\n"
+        return f"{self.owner} : {self.msg} \n\n{self.time} \n" + "-"*50 + "\n\n"
 
