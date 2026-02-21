@@ -1,6 +1,6 @@
 # Message Log — Python CLI Messaging System
 
-A clean, minimal, and well-structured **command-line messaging application** built with Python. The system enables two users to exchange messages interactively, logs all messages with timestamps, and persists them to a file for later review.
+A clean, minimal, and well-structured **command-line messaging application** built with Python. The system enables multiple users to exchange messages interactively, logs all messages with timestamps, and persists them to a txt and organised json file for later review.
 
 This repository is intentionally focused on **code clarity, explicit control flow, and foundational software engineering discipline** rather than feature bloat.
 
@@ -8,7 +8,7 @@ This repository is intentionally focused on **code clarity, explicit control flo
 
 ## 🚀 Features
 
-* Two-user interactive CLI messaging
+* Multi-character interactive CLI messaging
 * Automatic timestamping of each message
 * Persistent message storage in a text file
 * Option to view complete conversation history
@@ -36,7 +36,8 @@ This repository is intentionally focused on **code clarity, explicit control flo
 
   * `datetime` – timestamp generation
   * `os` – reliable file-path handling
-
+  * `shutil` – designing and user friendly
+  * `json` – reliable and reusable file-path 
 No external dependencies are required.
 
 ---
@@ -58,13 +59,15 @@ python Script_maker.py
 ## 🔍 Program Workflow
 
 1. Initializes or resets the message log file
-2. Prompts two users to enter their names
+2. Prompts as many  users wanted  to enter their names
 3. Users send messages interactively via the terminal
 4. Each message is validated, timestamped, and written to disk
 5. At the end of the session, users may:
 
    * Display all logged messages
    * Clear the message history
+   * organised json file of the script
+   * userfriendly txt file for a clean script
 
 ---
 
@@ -88,9 +91,7 @@ python Script_maker.py
 
 ## 🚧 Limitations
 
-* Supports only two users
-* Uses plain-text storage
-* Designed for single-session execution
+* currently dont support an interractive UI
 
 These limitations are intentional and documented.
 
@@ -98,8 +99,6 @@ These limitations are intentional and documented.
 
 ## 🔮 Future Improvements
 
-* Multi-user support
-* Encrypted message storage
 * Message search and filtering
 * GUI or web-based interface
 
