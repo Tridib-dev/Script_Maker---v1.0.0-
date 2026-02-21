@@ -99,6 +99,8 @@ class Message:
         self.msg = msg
         self.time = time.strftime("\t\t%Y-%m-%d ==> [ %H:%M:%S ]")
         self.owner = owner
+
+    # used for exporting data to txt file and json file 
     
     def msg_show(self):
         try:
