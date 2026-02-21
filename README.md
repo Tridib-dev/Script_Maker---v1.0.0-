@@ -24,7 +24,11 @@ This repository is intentionally focused on **code clarity, explicit control flo
 ├── Script_maker.py   # Program entry point and CLI workflow
 ├── functions.py      # File utilities and Message abstraction
 ├── messages.txt      # Message log (auto-created at runtime)
-└── README.md
+├── README.md         # Detailed README
+├── messages.json     # smart and organized script in json format  
+├── Liscence          # MIT liscence
+└── decoration.py     # two functions to decorate the output of the programme
+
 ```
 
 ---
