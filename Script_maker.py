@@ -1,5 +1,6 @@
 import functions
 import datetime
+import decoration as deco
 
 
 
@@ -14,9 +15,10 @@ def main():
     
 
     # preparing the file 
-    functions.reset_file()
-    print("\n\n\t\t\t\t\t\t<=: WELCOME TO MESSAGE LOG :=>\n\t\t\t\t\t_____________________________________________\n\n")
     
+    functions.reset_file()
+    deco.print_welcome_message()
+        
     # Users
     users = {}
     no_users = int(input("Enter number of users : "))
@@ -28,16 +30,23 @@ def main():
 
     # messaging function 
 
-    print(f"\n\n\t\t\t\t\t<=: Welcome  to the messaging world :=>\n\t\t\t\t   ________________________________________________________\n")
+    deco.print_messaging_banner()
     print("You can start messaging now !...\n\n")
     
     running = True
     for i in users:
         print(f"[id : {i}] => [name : {users[i]}]\n","_"*30,"\n")
+    
+
         
     while(running):
         user_id = input("Enter messager id : ")
-        u_name = users[user_id]
+        if user_id not in users.keys():
+            print("Invalid user id !... Try again !...")
+            continue
+        u_name = (users[user_id].strip())
+        u_name = u_name.capitalize()
+        
         # Get user message and time
         u_msg = input("Enter your message : ")
         if not u_msg.strip():
@@ -46,9 +55,9 @@ def main():
         
         #creating message object and writing to file
         u_time = datetime.datetime.now()
-        u = functions.Message(msg=u_msg,owner=u_name,time=u_time,)
-        with open(functions.FILE_NAME,"a")as File:
-            File.write(u.msg_show())
+        u = functions.Message(msg=u_msg,owner=u_name,time=u_time)
+        u.msg_show()
+        
 
         print("")
         
